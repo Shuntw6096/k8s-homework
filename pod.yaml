@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-pod
+  namespace: default
+spec:
+  containers:
+  - name: curl-container
+    image: curlimages/curl:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    command: ["sleep", "infinity"]
